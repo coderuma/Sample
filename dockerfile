@@ -1,5 +1,5 @@
 FROM httpd
-WORKDIR /var/www/html
+WORKDIR /etc/redis
 COPY . .
-EXPOSE 82/tcp
+EXPOSE 6379/tcp
 
