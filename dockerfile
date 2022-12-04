@@ -1,5 +1,4 @@
-FROM httpd
-WORKDIR /etc/redis
+FROM nginx
+WORKDIR /usr/share/nginx/html
 COPY . .
-EXPOSE 6379/tcp
-
+EXPOSE 8080/tcp
