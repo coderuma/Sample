@@ -1,4 +1,4 @@
 FROM nginx
 WORKDIR /usr/share/nginx/html
 COPY . .
-EXPOSE 8080/tcp
+EXPOSE 80/tcp
