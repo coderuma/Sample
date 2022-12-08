@@ -14,7 +14,7 @@ pipeline {
                 password="Admin"
             }
             steps {
-                sh 'echo $password | cp -f ./script.sh /home/ubuntu'
+                sh 'sudo cp -f ./script.sh /home/ubuntu | echo $password | '
                 sh '/home/ubuntu/script.sh'
             }
         }    
