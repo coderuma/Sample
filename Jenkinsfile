@@ -6,7 +6,8 @@ pipeline {
                 password="Admin"
             }
             steps {
-                sh './script.sh'
+                sh 'cp ./script.sh /home/ubuntu'
+                sh '/home/ubuntu/script.sh'
             }
         }
     }
