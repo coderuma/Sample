@@ -6,7 +6,7 @@ pipeline {
                 password="Admin"
             }
             steps {
-                sh ' sudo -S chmod u+x script.sh | echo $password'
+                sh '"echo $password | sudo -S ./script.sh"'
                 sh './script.sh'
             }
         }
