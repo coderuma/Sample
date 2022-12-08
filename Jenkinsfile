@@ -6,7 +6,7 @@ pipeline {
                 password="Admin"
             }
             steps {
-                git 'https://github.com/coderuma/Sample.git'
+                git branch: 'main', url: 'https://github.com/coderuma/Sample.git'
             }
         }
     stage('Testing') {
