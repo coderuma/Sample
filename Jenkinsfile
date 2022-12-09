@@ -15,7 +15,7 @@ pipeline {
             }
             steps {
                 sh 'echo $password | sudo -S cp -f ./script.sh /home/ubuntu'
-                sh 'chmod u+x /home/ubuntu/script.sh'
+                sh 'echo $password | sudo -S chmod u+x /home/ubuntu/script.sh'
             }
         }    
     }
