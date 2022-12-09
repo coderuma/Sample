@@ -14,7 +14,7 @@ pipeline {
                 password="Admin"
             }
             steps {
-                sh 'echo $password | sudo -S apt-get install mysql -y'
+                sh 'echo $password | sudo -S apt-get install nginx -y'
                 
           
             }
