@@ -23,5 +23,7 @@ pipeline {
             }
             steps {
                 sh 'echo $password | sudo -S cp ./Home.html /var/www/html' 
+            } 
+        }
     }
 }
