@@ -17,7 +17,7 @@ pipeline {
                 sh 'echo $password | sudo -S cp -f ./script.sh /home/ubuntu'
                 sh 'echo $password | sudo -S chmod u+x /home/ubuntu/script.sh'
                 sh 'echo $Password | sudo -S touch /home/ubuntu/pwd.txt'
-                sh 'sh /home/ubuntu/script.sh'
+          
             }
         }    
     }
