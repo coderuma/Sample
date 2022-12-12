@@ -1,1 +1,41 @@
-
+pipeline {
+    agent any 
+    stages {
+        stage('Configuration') {
+            environment { 
+                password="Admin"
+            }
+            steps {
+                sh 'echo $password | sudo -S apt-get update -y'
+                sh 'echo $password | sudo -S apt-get install nginx nginx-extras -y'
+                sh 'echo $password | sudo -S ap-get install software-properties-common -y'
+                sh 'echo $password | sudo apt install curl g++ gcc autoconf automake bison libc6-dev \
+        libffi-dev libgdbm-dev libncurses5-dev libsqlite3-dev libtool \
+        libyaml-dev make pkg-config sqlite3 zlib1g-dev libgmp-dev \
+        libreadline-dev libssl-dev'
+                sh 'curl -sSL https://rvm.io/mpapis.asc | gpg --import -'
+                sh 'curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -'
+                sh 'curl -sSL https://get.rvm.io | bash -s stable'
+                sh 'source ~/.rvm/scripts/rvm'
+                sh 'echo $password | sudo -S rvm install ruby -y'
+                
+            }
+        }
+    stage('Build') {
+            environment { 
+                password="Admin"
+            }
+            steps {
+                sh 'echo $password | sudo -S apt-get install nginx -y'
+            }
+        }
+    stage('Testing') {
+            environment { 
+                password="Admin"
+            }
+            steps {
+                sh 'echo $password | sudo -S cp ./Home.html /var/www/html' 
+            } 
+        }
+    }
+}
